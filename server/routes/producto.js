@@ -16,7 +16,7 @@ app.get('/producto', verificaToken, (req, res) => {
     let desde = Number(req.query.desde) || 0;
     let limite = Number(req.query.limite) || 0;
 
-    Producto.find({ disponible: true }, 'nombre precioUni descripcion')
+    Producto.find({ disponible: true }, 'nombre precioUni descripcion img')
         .sort('nombre')
         .skip(desde)
         .limit(limite)
